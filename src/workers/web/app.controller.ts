@@ -4,11 +4,13 @@ import { BaseController } from '../utils/base.controller';
 import { SessionGuard } from './auth/guards/session.guard';
 import { SamlGuard } from './auth/guards/saml.guard';
 import { SessionUser } from './auth/decorators/sessionuser.decorator';
+import { SetupAuditTrailService } from './livedata/modules/setupaudittrail/setupaudittrail.service';
 
 @Controller()
 export class AppController extends BaseController {
 
   public constructor(
+    private readonly setupAuditTrailService: SetupAuditTrailService
   ) { super(); }
   @Get()
   @UseGuards(SamlGuard)
@@ -32,7 +34,7 @@ export class AppController extends BaseController {
 
   @Get('/setupaudittrail/load/:id')
   public async loadOrderDetail(@Param('id') orderId) {
-    return await this.orderproductService.getOrderProducts(orderId);
+    return await this.setupAuditTrailService.getAdminLoginInfo();
   }
 
   @Get('/return')
