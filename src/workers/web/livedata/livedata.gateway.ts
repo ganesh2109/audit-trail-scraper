@@ -1,8 +1,6 @@
 import { WebSocketGateway, WebSocketServer, OnGatewayConnection, OnGatewayDisconnect } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import { CasesService } from './modules/cases/cases.service';
 import { SetupAuditTrailService } from './modules/setupaudittrail/setupaudittrail.service';
-import { OrdersService } from './modules/orders/orders.service';
 import { UnauthorizedException, Logger } from '@nestjs/common';
 import roles from '../../utils/role.constants';
 import * as crypto from 'crypto';
