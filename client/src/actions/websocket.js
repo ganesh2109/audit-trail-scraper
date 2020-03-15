@@ -1,5 +1,5 @@
-const ACTION_ADMIN_LOGINS = 'websocket:admin-logins';
+const ACTION_AUDIT_TRAIL = 'websocket:audit-trail';
 
 export {
-  ACTION_ADMIN_LOGINS,
+  ACTION_AUDIT_TRAIL
 };

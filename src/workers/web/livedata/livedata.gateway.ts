@@ -24,18 +24,9 @@ export class LiveDataGateway implements OnGatewayConnection, OnGatewayDisconnect
    */
   private async emitData() {
     // Retrieve and prepare all of the data once
-    /*let dashboardWontoday = {
-      type: 'websocket:dashboard:wontoday',
-      payload: this.createHash(await this.oppService.getOpportunityWonToday()),
-    };
-
-    let dashboardRevenuetoday = {
-      type: 'websocket:dashboard:revenuetoday',
-      payload: this.createHash(await this.oppService.getOpportunityRevenueWonToday()),
-    };*/
 
     let adminlogins = {
-      type: 'websocket:admin-logins',
+      type: 'websocket:audit-trail',
       payload: this.createHash(await this.satService.getAdminLoginInfo()),
     };
 

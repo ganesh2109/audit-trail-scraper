@@ -8,6 +8,18 @@ export class SetupAuditTrail {
   @Column({ name: 'action', nullable: false })
   public action: string;
 
+  @Column({ name: 'display', nullable: false })
+  public display: string;
+
+  @Column({ name: 'delegateuser', nullable: false })
+  public delegateuser: string;
+
+  @Column({ name: 'section', nullable: false })
+  public section: string;
+
+  @Column({ name: 'createddate', nullable: false })
+  public createddate: string;
+
   //opportunity_stagename: any;
   //revenue: any;
   //count: string;

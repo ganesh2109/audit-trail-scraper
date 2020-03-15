@@ -8,6 +8,7 @@ import { SamlStrategy } from './strategies/saml.strategy';
 import SamlController from './saml.controller';
 import { SamlGuard } from './guards/saml.guard';
 
+
 @Module({
   imports: [
     PassportModule.register({

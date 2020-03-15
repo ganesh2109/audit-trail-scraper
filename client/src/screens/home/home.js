@@ -1,12 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Page from '../../components/page';
 
 import Recent from './recent';
-import OpportunitiesStatusRevenues from '../charts/admin-logins';
+import AuditTrail from '../charts/audit-trail';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { connect } from 'react-redux'
 
@@ -14,7 +12,6 @@ class HomeScreen extends React.Component {
 
   render() {
     const classes = this.props.classes;
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
     return (
       <Page title="Dashboard" icon="dashboard">
@@ -47,12 +44,7 @@ class HomeScreen extends React.Component {
               }
             </Grid>
             <Grid item xs={12} md={12} lg={4}>
-              <div className="cloud-container">
-                <div className="cloud mini"></div>
-                <Paper className={fixedHeightPaper}>
-                  <OpportunitiesStatusRevenues />
-                </Paper>
-              </div>
+              <AuditTrail /> 
             </Grid>
           </Grid>
         </Grid>
@@ -64,9 +56,9 @@ class HomeScreen extends React.Component {
 const mapStateToProps = state => {
   return {
     loaded: state.websocket.dashboardLoaded,
-    dashboardWonToday: state.websocket.dashboardWonToday,
-    dashboardCasesClosed: state.websocket.dashboardCasesClosed,
-    dashboardRevenueToday: state.websocket.dashboardRevenueToday,
+    //dashboardWonToday: state.websocket.dashboardWonToday,
+    //dashboardCasesClosed: state.websocket.dashboardCasesClosed,
+    //dashboardRevenueToday: state.websocket.dashboardRevenueToday,
   }
 };
 

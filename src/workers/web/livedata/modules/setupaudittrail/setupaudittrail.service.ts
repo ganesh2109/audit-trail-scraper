@@ -12,38 +12,39 @@ export class SetupAuditTrailService {
     private readonly oppRepo: Repository<SetupAuditTrail>
   ) { }
 
-  public async getAdminLoginInfo(): Promise<Chart> {
-    let result: Chart = {
-      data: {
-        entities: ['Stage', 'Revenue'],
-        values: await this.getOpportunityDataByStageRevenue(),
-      },
-      meta: {
-        chartType: 'BarChart',
-        width: '100%',
-        height: '300px',
-        options: {
-          title: 'Opportunity revenues',
-          chartArea: { width: '50%' },
-          colors: ['#00A0E3', '#577D35', '#FFDD00', '#A8DDE0'],
-          backgroundColor: 'transparent',
-          isStacked: true,
-          hAxis: {
-            title: 'Total Revenue',
-            minValue: 0,
-          },
-          vAxis: {
-            title: 'Stage',
-          },
-          animation: {
-            duration: 1000,
-            easing: 'out',
-            startup: true,
-          },
-          legend: { position: 'bottom' }
-        },
-      },
-    };
+  public async getAdminLoginInfo(): Promise<SetupAuditTrail[]> {
+    // let result: Chart = {
+    //   data: {
+    //     entities: ['Stage', 'Revenue'],
+    //     values: await this.getAuditTrailStream(),
+    //   },
+    //   meta: {
+    //     chartType: 'BarChart',
+    //     width: '100%',
+    //     height: '300px',
+    //     options: {
+    //       title: 'Opportunity revenues',
+    //       chartArea: { width: '50%' },
+    //       colors: ['#00A0E3', '#577D35', '#FFDD00', '#A8DDE0'],
+    //       backgroundColor: 'transparent',
+    //       isStacked: true,
+    //       hAxis: {
+    //         title: 'Total Revenue',
+    //         minValue: 0,
+    //       },
+    //       vAxis: {
+    //         title: 'Stage',
+    //       },
+    //       animation: {
+    //         duration: 1000,
+    //         easing: 'out',
+    //         startup: true,
+    //       },
+    //       legend: { position: 'bottom' }
+    //     },
+    //   },
+    // };
+    let result = await this.getAuditTrailStream();
     return Promise.resolve(result);
   }
 
@@ -97,22 +98,24 @@ export class SetupAuditTrailService {
   }*/
 
 
-  public async getOpportunityDataByStageRevenue(): Promise<SetupAuditTrail[]> {
-    let OppResult: any[] = [];
+  public async getAuditTrailStream(): Promise<SetupAuditTrail[]> {
+    let auditTrailStream: any[] = [];
+    let selectFieldArray: string[] = [ 'action', 'display', 'createddate', 'section', 'delegateuser' ];
     try {
-      let opportunityList: SetupAuditTrail[] = await getRepository(SetupAuditTrail)
+      let setupaudittrailList: SetupAuditTrail[] = await getRepository(SetupAuditTrail)
         .createQueryBuilder('setupaudittrail')
-        .select('setupaudittrail.action')
+        .select(selectFieldArray)
+        .orderBy('createddate', 'DESC')
         .getRawMany();
-      opportunityList.forEach((item, index) => {
-        let val = [item.action, item.id];
-        OppResult.push(val);
+        setupaudittrailList.forEach((item, index) => {
+        let val = [item.action, item.display, item.createddate, item.section, item.delegateuser];
+        auditTrailStream.push(val);
       });
 
-      return Promise.resolve(OppResult);
+      return Promise.resolve(auditTrailStream);
     } catch (e) {
       // Something went wrong, we're unable to find the requested opportunity
-      let message = `Unable to retrieve all opportunity: ${e.message} \n\n${e.stack}`;
+      let message = `Unable to retrieve all audit trails: ${e.message} \n\n${e.stack}`;
       return Promise.reject(new Error(message));
     }
   }

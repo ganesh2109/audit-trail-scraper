@@ -1,5 +1,5 @@
 import {
-  ACTION_ADMIN_LOGINS
+  ACTION_AUDIT_TRAIL
 } from '../actions/websocket';
 
 const initialState = {
@@ -16,7 +16,7 @@ export default function(state = initialState, action) {
   let dataStructure;
 
   switch (action.type) {
-    case ACTION_ADMIN_LOGINS:
+    case ACTION_AUDIT_TRAIL:
       // If the hash is the same, the data is unchanged
       if (action.payload.hash === state.opportunityStatusRevenueHash) {
         return state;
@@ -24,15 +24,15 @@ export default function(state = initialState, action) {
 
       // Hash values do not match, data has changed
       dataStructure = [];
-      dataStructure.push(action.payload.data.data.entities);
-      action.payload.data.data.values.forEach((item, index) => {
+      //dataStructure.push(action.payload.data.data.entities);
+      action.payload.data.forEach((item, index) => {
         dataStructure.push(item);
       });
 
       return Object.assign({}, state, {
-        opportunityStatusRevenue: dataStructure,
-        opportunityStatusRevenueLoaded: true,
-        opportunityStatusRevenueHash: action.payload.hash,
+        audittrail: dataStructure,
+        audittrailLoaded: true,
+        audittrailHash: action.payload.hash,
         opportunityStatusRevenueChart: action.payload.data.meta,
       });
     default:
