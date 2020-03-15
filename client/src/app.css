@@ -1,0 +1,96 @@
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+  margin-right: 4px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #035478;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.cloud, .cloudshadow {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 
+              0px 1px 1px 0px rgba(0,0,0,0.14), 
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+	width: 338px; height: 150px;
+	background: #FFF;
+	border-radius: 100px;
+	position: relative;
+  margin: 99px auto 39px auto;
+}
+.cloud:after, .cloud:before, .cloudshadow:after, .cloudshadow:before {
+	content: '';
+	position: absolute;
+	background: #FFF;
+	z-index: 1
+}
+.cloudshadow, .cloudshadow:after, .cloudshadow:before {
+    margin: 0;
+    z-index: -99;
+}
+.cloud:after, .cloudshadow:after {
+  width: 100px; 
+  height: 100px;
+  top: -50px; 
+  left: 50px;
+	border-radius: 100px;
+}
+.cloud:before, .cloudshadow:before  {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	border-radius: 200px;
+}
+
+.cloud-content {
+  position: absolute;
+  top: 3px;
+  z-index: 2;
+  left: 58px;
+  width: 231px;
+}
+
+svg rect {
+  background: transparent !important;
+}
+
+.copyright-inner {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 10px 25px;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+  background: #304E15;
+  color: #FFF;
+}
+
+.cloud-container {
+  position: relative;
+}
+
+.cloud.mini {
+  transform: scale(0.2, 0.2);
+  margin: 0px;
+  position: absolute;
+  top: -70px;
+  right: -150px;
+}
+
+.section-spacing {
+  margin-bottom: 20px;
+}

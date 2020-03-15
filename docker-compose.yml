@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  postgres:
+    restart: 'always'
+    ports:
+      - '5433:5433'
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "TYPEORM_USERNAME=heroku"
+      - "TYPEORM_PASSWORD=heroku"
+      - "TYPEORM_DATABASE=herokudeloittedemo"
+    build: './db'
+    networks:
+      infranet:
+        aliases:
+          - 'postgres'
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6378:6378'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+networks:
+  infranet:

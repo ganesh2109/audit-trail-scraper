@@ -1,1 +1,0 @@
-# autdit-trail-scrapper

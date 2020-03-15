@@ -1,0 +1,10 @@
+.idea
+node_modules
+keys
+src/database/data/test.sqlite
+coverage
+client/node_modules
+
+# Ensure shell script uses LF.
+docker-compose.yml  eol=lf
+*.sh        eol=lf

@@ -1,0 +1,10 @@
+{
+  "watch": ["src"],
+  "ext": "ts,hbs,json",
+  "ignore": [
+    "src/**/*.spec.ts", 
+    "src/workers/listener/**/*", 
+    "src/workers/processor/**/*"
+  ],
+  "exec": "ts-node --transpile-only -r tsconfig-paths/register src/workers/web/main.ts"
+}
