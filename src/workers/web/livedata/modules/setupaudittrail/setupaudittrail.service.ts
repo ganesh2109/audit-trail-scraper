@@ -100,7 +100,7 @@ export class SetupAuditTrailService {
 
   public async getAuditTrailStream(): Promise<SetupAuditTrail[]> {
     let auditTrailStream: any[] = [];
-    let selectFieldArray: string[] = [ 'action', 'display', 'createddate', 'section', 'delegateuser' ];
+    let selectFieldArray: string[] = [ 'createdbyid','action', 'display', 'createddate', 'section', 'delegateuser' ];
     try {
       let setupaudittrailList: SetupAuditTrail[] = await getRepository(SetupAuditTrail)
         .createQueryBuilder('setupaudittrail')
@@ -108,7 +108,7 @@ export class SetupAuditTrailService {
         .orderBy('createddate', 'DESC')
         .getRawMany();
         setupaudittrailList.forEach((item, index) => {
-        let val = [item.action, item.display, item.createddate, item.section, item.delegateuser];
+        let val = [item.createdbyid, item.action, item.display, item.createddate, item.section, item.delegateuser];
         auditTrailStream.push(val);
       });
 

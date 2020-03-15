@@ -39,6 +39,7 @@ class AuditTrail extends React.Component {
         <Table>
         <TableHead>
           <TableRow>
+            <StyledTableCell>User</StyledTableCell>
             <StyledTableCell>Action</StyledTableCell>
             <StyledTableCell align="left">Display</StyledTableCell>
             <StyledTableCell align="left">CreatedDate</StyledTableCell>

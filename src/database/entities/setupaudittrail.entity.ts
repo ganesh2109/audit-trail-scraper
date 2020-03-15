@@ -20,6 +20,9 @@ export class SetupAuditTrail {
   @Column({ name: 'createddate', nullable: false })
   public createddate: string;
 
+  @Column({ name: 'createdbyid', nullable: false })
+  public createdbyid: string;
+
   //opportunity_stagename: any;
   //revenue: any;
   //count: string;
