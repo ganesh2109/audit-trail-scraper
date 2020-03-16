@@ -115,7 +115,7 @@ class AppContainer extends React.Component {
           <Toolbar className={classes.toolbar}>
             <IconButton
               edge="start"
-              color="inherit"
+              
               aria-label="open drawer"
               onClick={this.handleDrawerOpen}
               className={clsx(classes.menuButton, this.props.drawerOpen && classes.menuButtonHidden)}
@@ -135,18 +135,16 @@ class AppContainer extends React.Component {
         <Drawer
           variant={!this.state.isSmall ? 'permanent' : 'temporary'}
           classes={{
-            paper: clsx(classes.drawerPaper, !this.props.drawerOpen && classes.drawerPaperClose),
+            paper: clsx(classes.backgroundblack, classes.drawerPaper, !this.props.drawerOpen && classes.drawerPaperClose),
           }}
           open={this.props.drawerOpen}
           onClose={this.handleDrawerClose}
         >
           <div className={classes.toolbarIcon}>
             <IconButton onClick={this.handleDrawerClose}>
-              <ChevronLeftIcon />
+              <ChevronLeftIcon className={classes.backgroundblack} />
             </IconButton>
           </div>
-
-          <Divider />
           <List>
             <MainListItems classes={classes} />
           </List>

@@ -97,7 +97,6 @@ export class SetupAuditTrailService {
     }
   }*/
 
-
   public async getAuditTrailStream(): Promise<SetupAuditTrail[]> {
     let auditTrailStream: any[] = [];
     let selectFieldArray: string[] = [ 'createdbyid','action', 'display', 'createddate', 'section', 'delegateuser' ];

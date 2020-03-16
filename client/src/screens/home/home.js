@@ -14,7 +14,7 @@ class HomeScreen extends React.Component {
     const classes = this.props.classes;
 
     return (
-      <Page title="Dashboard" icon="dashboard">
+      <Page>
 
         <Grid item xs={12} md={12} lg={12}>
           <Grid container spacing={4}>

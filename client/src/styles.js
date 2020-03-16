@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import logo from './logo.png';
+import auditbg from './auditbg.jpg';
 import landscape from './landscape_1.png';
 import rainbow from './rainbow2.png';
 
@@ -9,7 +9,7 @@ const useStyles = function () {
   return makeStyles(theme => ({
     root: {
       display: 'flex',
-      background: 'bottom center url(' + landscape + ') #A8DDE0 no-repeat',
+      //background: 'bottom center url(' + landscape + ') #A8DDE0 no-repeat',
       backgroundSize: '100% 40%',
     },
     toolbar: {
@@ -21,8 +21,9 @@ const useStyles = function () {
       justifyContent: 'flex-end',
       padding: '0 8px',
       ...theme.mixins.toolbar,
-      background: '#FFF center 10px url(' + logo + ') no-repeat',
-      backgroundSize: '40% auto',
+      color: '#fff',
+      background: '#000',
+      backgroundSize: 'cover',
     },
     appBar: {
       zIndex: theme.zIndex.drawer + 1,
@@ -30,8 +31,7 @@ const useStyles = function () {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
-      color: '#A8DDE0',
-      background: 'bottom center url(' + rainbow + ') #00A0E3',
+      background: '#000',
       backgroundSize: 'cover',
     },
     appBarShift: {
@@ -48,16 +48,16 @@ const useStyles = function () {
     title: {
       flexGrow: 1,
       marginLeft: theme.spacing(1),
-      color: '#035478',
+      color: '#FFF',
       fontWeight: 'bold',
     },
     menuButton: {
-      color: '#035478',
+      color: '#FFF',
       marginRight: 6,
     },
     avatar: {
       marginLeft: theme.spacing(2),
-      border: '2px solid #035478',
+      border: '2px solid #FFF',
     },
     drawerPaper: {
       position: 'relative',
@@ -123,10 +123,10 @@ const useStyles = function () {
       textAlign: 'center',
     },
     menuIcon: {
-      color: '#035478',
+      color: '#FFF',
     },
     pageIcon: {
-      color: '#035478',
+      color: '#FFF',
     },
     cloudTitle: {
       color: '#FFDF01',
@@ -151,6 +151,10 @@ const useStyles = function () {
     dashboard: {
       borderRadius: '20px',
     },
+    backgroundblack: {
+      background: '#000',
+      color: '#fff'
+    }
   }))();
 };
 
