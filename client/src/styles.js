@@ -1,7 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import auditbg from './auditbg.jpg';
-import landscape from './landscape_1.png';
-import rainbow from './rainbow2.png';
 
 const drawerWidth = 200;
 

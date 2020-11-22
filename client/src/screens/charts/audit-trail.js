@@ -69,7 +69,6 @@ const mapStateToProps = state => {
   return {
     data: state.websocket.audittrail,
     loaded: state.websocket.audittrailLoaded
-    //chart: state.websocket.opportunityStatusRevenueChart
   }
 };
 

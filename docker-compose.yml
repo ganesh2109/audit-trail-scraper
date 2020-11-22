@@ -3,7 +3,7 @@ services:
   postgres:
     restart: 'always'
     ports:
-      - '5433:5433'
+      - '5432:5432'
     environment:
       - "POSTGRES_USER=postgres"
       - "TYPEORM_USERNAME=heroku"

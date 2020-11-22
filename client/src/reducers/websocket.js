@@ -6,7 +6,7 @@ const initialState = {
   dashboardLoaded: false,
 
   opportunityStatusRevenue: [],
-  opportunityStatusRevenueHash: '',
+  audittrailHash: '',
   opportunityStatusRevenueLoaded: false,
   opportunityStatusRevenueChart: [],
 
@@ -18,7 +18,9 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case ACTION_AUDIT_TRAIL:
       // If the hash is the same, the data is unchanged
-      if (action.payload.hash === state.opportunityStatusRevenueHash) {
+      console.log('ACTIONHASH:::'+action.payload.hash);
+      console.log('STATEHASH:::'+state.audittrailHash);
+      if (action.payload.hash === state.audittrailHash) {
         return state;
       }
 
@@ -32,8 +34,7 @@ export default function(state = initialState, action) {
       return Object.assign({}, state, {
         audittrail: dataStructure,
         audittrailLoaded: true,
-        audittrailHash: action.payload.hash,
-        opportunityStatusRevenueChart: action.payload.data.meta,
+        audittrailHash: action.payload.hash
       });
     default:
       return state;
