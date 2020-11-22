@@ -21,12 +21,6 @@ class MainListItems extends React.Component {
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button component={Link} to="/orders" onClick={this.props.onSelected}>
-          <ListItemIcon>
-            <ShoppingCartIcon className={this.props.classes.menuIcon} />
-          </ListItemIcon>
-          <ListItemText primary="Orders" onClick={this.props.onSelected} />
-        </ListItem>
       </div>
     );
   }

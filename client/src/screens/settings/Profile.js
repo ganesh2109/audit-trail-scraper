@@ -23,7 +23,7 @@ class Profile extends React.Component {
       <React.Fragment>
         <Grid container>
           <Grid item lg={12} md={12} xs={12} className={this.props.classes.centeralign}>
-            <img src={this.props.data.fullPhotoUrl} alt="Avatar" className={this.props.classes.avatarradius} />
+            <img src={this.props.data.profilepic} alt="Avatar" className={this.props.classes.avatarradius} />
           </Grid>
 
         </Grid>
