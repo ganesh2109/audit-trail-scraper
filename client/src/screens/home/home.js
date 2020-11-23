@@ -5,7 +5,6 @@ import Page from '../../components/page';
 
 import Recent from './recent';
 import AuditTrail from '../charts/audit-trail';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import { connect } from 'react-redux'
 
 class HomeScreen extends React.Component {
@@ -19,7 +18,7 @@ class HomeScreen extends React.Component {
         <Grid item xs={12} md={12} lg={12}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={12} lg={12}>
-              {!this.props.loaded && <LinearProgress variant="query" />}
+              {/* {!this.props.loaded && <LinearProgress variant="query" />} */}
               {this.props.loaded &&
                 <Grid container spacing={2} alignContent="center" alignItems="center" justify="center">
                   <Grid item xs={12} md={12} lg={4}>

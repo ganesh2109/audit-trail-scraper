@@ -16,7 +16,7 @@ export class LiveDataGateway implements OnGatewayConnection, OnGatewayDisconnect
   public constructor(
     private readonly satService: SetupAuditTrailService,
   ) {
-    setInterval(() => this.emitData(), 1000);
+    setInterval(() => this.emitData(), 3000);
   }
 
   /**

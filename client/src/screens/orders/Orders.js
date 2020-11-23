@@ -8,30 +8,30 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import SectionTitle from '../../components/section-title';
-import { Link } from 'react-router-dom'
 
 class Orders extends React.Component {
 
   render() {
     return (
       <React.Fragment>
-        <SectionTitle>Recent Orders</SectionTitle>
+        <SectionTitle>Notification Criteria</SectionTitle>
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
+              <TableCell>Metadata</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.props.data.map(row => (
-              <TableRow key={row.id}>
-                <TableCell><Link to={'/orders/' + row.sfid}>{row.name}</Link></TableCell>
-                <TableCell>{row.description}</TableCell>
-                <TableCell>{row.status}</TableCell>
-              </TableRow>
-            ))}
+            <TableCell>Profile</TableCell>
+            <TableCell>Manual Change</TableCell>
+            <TableCell>Active</TableCell>
+          </TableBody>
+          <TableBody>
+            <TableCell>Permission Set</TableCell>
+            <TableCell>Manual Change</TableCell>
+            <TableCell>Active</TableCell>
           </TableBody>
         </Table>
       </React.Fragment>

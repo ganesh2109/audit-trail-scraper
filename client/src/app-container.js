@@ -159,7 +159,7 @@ class AppContainer extends React.Component {
           <Switch>
             <Route path="/" exact component={HomeScreen} />
             <Route path="/orders/:id" component={OrderDetailScreen} />
-            <Route path="/orders" component={OrdersScreen} />
+            <Route path="/NotificationRules" component={OrdersScreen} />
             <Route path="/profile" component={SettingsScreen} />
             <Route path="/return" />
             <Route component={NotFoundScreen} />

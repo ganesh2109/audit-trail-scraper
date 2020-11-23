@@ -40,3 +40,17 @@ export default function(state = initialState, action) {
       return state;
   }
 }
+
+export const sendNotification = () => {
+  return function(dispatch, getState) {
+    fetch('/auth/saml/profile')
+      .then(response => response.json())
+      .then(responseJson => {
+        //dispatch(setProfile(responseJson));
+        console.log('DONE!');
+      })
+      .catch(error => {
+        console.error('Failed to load profile', error);
+      });
+  };
+};

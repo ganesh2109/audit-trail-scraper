@@ -37,6 +37,11 @@ export class AppController extends BaseController {
     return await this.setupAuditTrailService.getAdminLoginInfo();
   }
 
+  @Get('/sendNotification')
+  public async sendNotifications(@Param('message') message){
+
+  }
+
   @Get('/return')
   @UseGuards(SessionGuard)
   public returnToSalesforce(@Res() res: any, @SessionUser() user) {
