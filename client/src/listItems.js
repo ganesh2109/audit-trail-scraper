@@ -42,7 +42,7 @@ class SettingsListItems extends React.Component {
           </ListItemIcon>
           <ListItemText primary="Profile" />
         </ListItem>
-        <ListItem button component="a" href="/return">
+        <ListItem button component="a" href="/return" target="_blank">
           <ListItemIcon>
             <KeyboardReturnIcon className={this.props.classes.menuIcon} />
           </ListItemIcon>

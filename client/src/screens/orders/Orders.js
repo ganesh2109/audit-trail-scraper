@@ -38,23 +38,11 @@ class Orders extends React.Component {
             <TableCell>Password changed for named credential ([a-zA-Z0-9\\s])*</TableCell>
             <TableCell>Inactive</TableCell>
           </TableBody>          
-          <TableBody>
-            <TableCell>Permission Set</TableCell>
-            <TableCell>Changed permission set for user ([a-zA-Z0-9\\s])* from ([a-zA-Z0-9\\s])* to ([a-zA-Z0-9\\s])*</TableCell>
-            <TableCell>Inactive</TableCell>
-          </TableBody>          
-          <TableBody>
-            <TableCell>Permission Set</TableCell>
-            <TableCell>Changed permission set for user ([a-zA-Z0-9\\s])* from ([a-zA-Z0-9\\s])* to ([a-zA-Z0-9\\s])*</TableCell>
-            <TableCell>Inactive</TableCell>
-          </TableBody>          
-          <TableBody>
-            <TableCell>Permission Set</TableCell>
-            <TableCell>Changed permission set for user ([a-zA-Z0-9\\s])* from ([a-zA-Z0-9\\s])* to ([a-zA-Z0-9\\s])*</TableCell>
-            <TableCell>Inactive</TableCell>
-          </TableBody>        
           </Table>
+
+          
       </React.Fragment>
+
     );
   }
 }

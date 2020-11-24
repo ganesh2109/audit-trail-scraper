@@ -74,8 +74,20 @@ export class SetupAuditTrailService {
           if(index == 0){
             latest = item.id;
           }
-          
-          let val = [item.createdbyid, item.action, item.display, item.createddate, item.section, item.delegateuser];
+          let severity = 'high';
+          let username = '';
+          if(item.section == 'Manage Users' ||  item.section == 'Named Credentials' ||item.section == 'Session Settings' 
+          ||item.section == 'Certificate and Key Management'){
+            severity = 'High';
+          } else {
+            severity = 'Low';
+          }
+          if(item.createdbyid == '0050Y000000PQgnQAG'){
+            username = 'Ganesh Shankar';
+          } else {
+            username = 'Test';
+          }
+          let val = [username, item.display, item.createddate, item.section, item.delegateuser, severity];
           auditTrailStream.push(val);
         });
         let latestaudittrails: SetupAuditTrail[] = await getRepository(SetupAuditTrail)

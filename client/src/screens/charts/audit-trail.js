@@ -9,6 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { withStyles } from '@material-ui/core/styles';
+import WarningIcon from '@material-ui/icons/Warning';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -30,6 +31,7 @@ const StyledTableRow = withStyles(theme => ({
 }))(TableRow);
 
 class AuditTrail extends React.Component {
+  
   render() {
     return (
       //console.log('DATA::::'+{this.props.data});
@@ -40,11 +42,11 @@ class AuditTrail extends React.Component {
         <TableHead>
           <TableRow>
             <StyledTableCell>User</StyledTableCell>
-            <StyledTableCell>Action</StyledTableCell>
             <StyledTableCell align="left">Display</StyledTableCell>
             <StyledTableCell align="left">CreatedDate</StyledTableCell>
             <StyledTableCell align="left">Section</StyledTableCell>
             <StyledTableCell align="left">Delegate User</StyledTableCell>
+            <StyledTableCell align="left">Severity</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -52,7 +54,9 @@ class AuditTrail extends React.Component {
             <StyledTableRow key={row.name}>
               {row.map(column => (
                 <StyledTableCell component="th" scope="row">
-                  {column}
+                  {column}<br></br>
+                  {column === 'High' && <WarningIcon color="error" />}
+                  {column === 'Low' && <WarningIcon color="primary" />}
                 </StyledTableCell>
               ))}
             </StyledTableRow>
