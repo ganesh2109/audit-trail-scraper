@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import useStyles from './../../styles';
 import Orders from './Orders';
 import NotificationRisk from './NotificationRisk';
+import NotificationActions from './NotificationActions';
 
 export default function HomeScreen() {
   const classes = useStyles();
@@ -17,6 +18,10 @@ export default function HomeScreen() {
       <br/>
       <Paper className={classes.paper}>
         <NotificationRisk />
+      </Paper>
+      <br/>
+      <Paper className={classes.paper}>
+        <NotificationActions />
       </Paper>
     </Page>
   );
