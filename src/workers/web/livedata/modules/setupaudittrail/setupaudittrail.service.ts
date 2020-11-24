@@ -157,6 +157,16 @@ export class SetupAuditTrailService {
                     }],
                     "markdown": true
                 }],
+                "potentialAction": [
+                  {
+                      "@context": "http://schema.org",
+                      "@type": "ViewAction",
+                      "name": "View User",
+                      "target": [
+                          "https://securityplaygroundorg-dev-ed.my.salesforce.com/${facts.createdby}"
+                      ]
+                  }
+                 ]
               }`;
               const response = await this.httpService.post('https://outlook.office.com/webhook/d39c830e-86a0-482f-86f8-d1179598b160@36da45f1-dd2c-4d1f-af13-5abe46b99921/IncomingWebhook/9be5daae426c4c369ff1054abcb629f1/361fc202-813c-4af8-a5c2-b2d5dea4e028',
                jsonMessage).toPromise();
