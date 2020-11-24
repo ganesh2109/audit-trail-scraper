@@ -34,9 +34,10 @@ class AuditTrail extends React.Component {
   
   render() {
     return (
-      //console.log('DATA::::'+{this.props.data});
+      
       <React.Fragment>
-        <SectionTitle>AuditTrail</SectionTitle>
+        <SectionTitle>AuditTrail</SectionTitle><br></br>
+        Filter <input type="text"></input> <button type="submit">Filter Audit Trail</button><br></br><br></br>
         {!this.props.loaded && <CircularProgress />}
         <Table>
         <TableHead>
