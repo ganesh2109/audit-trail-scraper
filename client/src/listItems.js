@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Notifications from '@material-ui/icons/Notifications';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Face from '@material-ui/icons/Face';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
@@ -23,7 +23,7 @@ class MainListItems extends React.Component {
         </ListItem>
         <ListItem button component={Link} to="/NotificationRules" onClick={this.props.onSelected}>
           <ListItemIcon>
-            <ShoppingCartIcon className={this.props.classes.menuIcon} />
+            <Notifications className={this.props.classes.menuIcon} />
           </ListItemIcon>
           <ListItemText primary="Notify!" onClick={this.props.onSelected} />
         </ListItem>

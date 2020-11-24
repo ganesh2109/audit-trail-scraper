@@ -71,7 +71,8 @@
     "ts-node": "^8.4.1",
     "typeorm": "^0.2.20",
     "underscore.string": "^3.3.5",
-    "json-rules-engine": "5.0.4"
+    "json-rules-engine": "5.0.4",
+    "memory-cache": "0.2.0"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.8.5",

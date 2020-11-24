@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Notifications from '@material-ui/icons/Notifications';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Face from '@material-ui/icons/Face';
 
@@ -123,7 +123,7 @@ class AppContainer extends React.Component {
               <MenuIcon />
             </IconButton>
             {!this.state.isSmall && this.props.pageIcon === 'dashboard' && <DashboardIcon className={classes.pageIcon} />}
-            {!this.state.isSmall && this.props.pageIcon === 'shopping' && <ShoppingCartIcon className={classes.pageIcon} />}
+            {!this.state.isSmall && this.props.pageIcon === 'notifications' && <Notifications className={classes.pageIcon} />}
             {!this.state.isSmall && this.props.pageIcon === 'profile' && <Face className={classes.pageIcon} />}
             {!this.state.isSmall && this.props.pageIcon === 'salesforce' && <KeyboardReturnIcon className={classes.pageIcon} />}
 

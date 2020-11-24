@@ -9,7 +9,7 @@ export default function HomeScreen() {
   const classes = useStyles();
 
   return (
-    <Page title="Orders" icon="shopping">
+    <Page title="Notify!!" icon="notifications">
       <Paper className={classes.paper}>
         <Orders />
       </Paper>
